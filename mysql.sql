@@ -3,6 +3,7 @@ USE mydatabase;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL
+    uname VARCHAR(50) NOT NULL,
+    uemail VARCHAR(50) NOT NULL,
+    pword VARCHAR(50) NOT NULL
 );
