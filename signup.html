@@ -108,7 +108,7 @@
                     <input type="checkbox" id="terms">
                     <label for="terms">I agree to the terms and conditions</label>
                 </div>
-                <button onclick="signup()">Sign Up</button>
+                <button onclick="signup()" id="signup">Sign Up</button>
                 <div class="login">
                     Already have an account? <a href="login.html">Log In</a>
                 </div>
@@ -117,10 +117,11 @@
         <div class="right"></div>
     </div>
     <script>
+        signup(){
         fetch('http://localhost:3306/api/data')
           .then(response => response.json())
           .then(data => {
-            const dataDiv = document.getElementById('data');
+            const dataDiv = document.getElementById('signup');
             data.forEach(item => {
               const para = document.createElement('p');
               para.textContent = JSON.stringify(item);
@@ -128,6 +129,7 @@
             });
           })
           .catch(error => console.error('Error:', error));
+        }
       </script>
 </body>
 </html>
