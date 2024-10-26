@@ -5,9 +5,14 @@ async function signup() {
     const confirmPassword = document.getElementById("confirm-password").value;
     const message = document.getElementById("register-message");
   
+    
+
     if (password !== confirmPassword) {
       message.innerText = "Passwords do not match.";
       return;
+    }
+    else {
+      window.location.href = "login.html";
     }
   
     try {
