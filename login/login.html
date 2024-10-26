@@ -1,13 +1,15 @@
 <html>
 <head>
-    <title>Sign Up Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Comic+Neue&family=Varela+Round&display=swap" rel="stylesheet">
-
-   <style>
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Comic+Neue&family=Varela+Round&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
+    <style>
         body {
             margin: 0;
             font-family: "Arima", system-ui;
- 
+  
             display: flex;
             height: 100vh;
             width: 100vw;
@@ -26,31 +28,30 @@
         }
         .right {
             width: 50%;
-            background-image: url("pillars-5617147_1280.jpg");
+            background-image: url(pillars-5617147_1280.jpg);
             background-size: cover;
             background-position: center;
         }
-        .signup-box {
+        .login-box {
             width: 350px;
         }
-        .signup-box h1 {
+        .login-box h1 {
             font-size: 36px;
             margin-bottom: 20px;
             color: #333;
         }
-        .signup-box p {
+        .login-box p {
             font-size: 16px;
             color: #888;
             margin-bottom: 30px;
         }
-        .signup-box label {
+        .login-box label {
             display: block;
             font-size: 14px;
             margin-bottom: 5px;
         }
-        .signup-box input[type="text"],
-        .signup-box input[type="password"],
-        .signup-box input[type="email"] {
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
@@ -58,28 +59,33 @@
             border-radius: 5px;
             font-size: 14px;
         }
-        .signup-box .terms {
+        .login-box .remember-me {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
-        .signup-box .terms input {
+        .login-box .remember-me input {
             margin-right: 10px;
         }
-        .signup-box .terms label {
+        .login-box .remember-me label {
             margin: 0;
         }
-        .signup-box .login {
+        .login-box .forgot-password {
+            margin-left: auto;
+            font-size: 12px;
+            color: #888;
+        }
+        .login-box .signup {
             margin-top: 10px;
             font-size: 14px;
             color: #888;
             text-align: center;
         }
-        .signup-box .login a {
+        .login-box .signup a {
             color: #ff6600;
             text-decoration: none;
         }
-        .signup-box button {
+        .login-box button {
             width: 100%;
             padding: 12px;
             background-color: #ff6600;
@@ -94,43 +100,26 @@
 <body>
     <div class="container">
         <div class="left">
-            <div class="signup-box">
-                <h1>Sign Up</h1>
-                <p>Introduce yourself into wonderful journey ahead to MakeMyTour.</p>
+            <div class="login-box">
+                <h1>Login</h1>
+                <p>The journey of a thousand miles begins with one step with MakeMyTour.</p>
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="your-username">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="your-email@gmail.com">
+                <input type="text" id="username" placeholder="your-email@gmail.com">
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="Your Password">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" placeholder="Confirm Your Password">
-                <div class="terms">
-                    <input type="checkbox" id="terms">
-                    <label for="terms">I agree to the terms and conditions</label>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                    <a href="#" class="forgot-password">Forgot Password</a>
                 </div>
-                <button onclick="signup()" id="signup">Sign Up</button>
-                <div class="login">
-                    Already have an account? <a href="login.html">Log In</a>
+                <button onclick="login()">Log In</button>
+                <div class="signup">
+                    Don't have an account? <a href="signup.html">Sign Up</a>
                 </div>
             </div>
         </div>
         <div class="right"></div>
     </div>
-    <script>
-        signup(){
-        fetch('http://localhost:3306/api/data')
-          .then(response => response.json())
-          .then(data => {
-            const dataDiv = document.getElementById('signup');
-            data.forEach(item => {
-              const para = document.createElement('p');
-              para.textContent = JSON.stringify(item);
-              dataDiv.appendChild(para);
-            });
-          })
-          .catch(error => console.error('Error:', error));
-        }
-      </script>
+    <script src="lar.js"></script>
 </body>
 </html>
