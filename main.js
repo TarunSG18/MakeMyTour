@@ -2,6 +2,14 @@ const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 
+function Signup() {
+  window.location.href = "signup.html"; // Change to your desired URL
+}
+
+function Signin() {
+  window.location.href = "login.html"; // Change to your desired URL
+}
+
 menuBtn.addEventListener("click", (e) => {
   navLinks.classList.toggle("open");
 
