@@ -10,6 +10,18 @@ function Signin() {
   window.location.href = "login.html"; // Change to your desired URL
 }
 
+function hotel() {
+  window.location.href = "hotel/hotel.html"; // Change to your desired URL
+}
+
+function br() {
+  window.location.href = "new bike/index.html"; // Change to your desired URL
+}
+
+function cr() {
+  window.location.href = "car/car.html"; // Change to your desired URL
+}
+
 menuBtn.addEventListener("click", (e) => {
   navLinks.classList.toggle("open");
 
